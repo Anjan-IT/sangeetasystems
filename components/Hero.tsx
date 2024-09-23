@@ -14,8 +14,8 @@ const Hero = () => {
         <div
           className="h-screen w-full dark:bg-black absolute top-0 left-0 flex items-center justify-center"
           style={{
-            backgroundColor: "#d4c5b1",
-            // backgroundColor: "#faefe0",
+            // backgroundColor: "#d4c5b1",
+            backgroundColor: "#faefe0",
           }}
         ></div>
 
