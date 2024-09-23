@@ -7,14 +7,12 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/ui/NavBar";
-import { ScrollSmoother } from "gsap-trial/dist/ScrollSmoother"; // For trial
 import HyperText from "@/components/ui/HyperText";
 import { motion } from "framer-motion";
 import { services } from "@/data";
-import { describe } from "node:test";
 import Footer from "@/components/Footer";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger);
 
 const ServicesPage = () => {
   const heroRef = useRef<HTMLDivElement | null>(null);
@@ -25,13 +23,6 @@ const ServicesPage = () => {
   
 
   useEffect(() => {
-    // Initialize ScrollSmoother for smooth scrolling
-    // const smoother = ScrollSmoother.create({
-    //   wrapper: "#smooth-wrapper",
-    //   content: "#smooth-content",
-    //   smooth: 2, // Adjust the smoothness (1.5 is for butter-smooth scroll)
-    //   effects: true, // Allow elements with data-speed and data-lag to animate
-    // });
 
     // GSAP Animations with ScrollTrigger
     if (heroRef.current) {

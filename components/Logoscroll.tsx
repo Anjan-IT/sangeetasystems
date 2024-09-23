@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { cn } from "@/lib/utils";
 import Marquee from "./ui/marquee";
 
@@ -69,12 +70,12 @@ const ReviewCard = ({
     >
       <div className="flex justify-center items-center ">
         <img className="" width={150} height={60} alt="" src={img} />
-        {/* <div className="flex flex-col">
+        <div className="flex flex-col">
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
           </figcaption>
           <p className="text-xs font-medium dark:text-white/40">{username}</p>
-        </div> */}
+        </div> 
       </div>
       {/* <blockquote className="mt-2 text-sm">{body}</blockquote> */}
     </figure>
