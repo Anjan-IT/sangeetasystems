@@ -41,7 +41,7 @@ const Home = () => {
           <Hero />
           <MarqueeDemo />
           <OurServices />
-          <CoreServices />
+          <CoreServices services={[]} />
           <TabsDemo />
           {/* <FloatingNav navItems={navItems} /> */}
           {/* <NavbarTop /> */}
