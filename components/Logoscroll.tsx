@@ -3,41 +3,23 @@ import { cn } from "@/lib/utils";
 import Marquee from "./ui/marquee";
 
 const reviews = [
-  {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "oliva.png",
+  { 
+    img: "/oliva.png",
   },
-  {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
+  { 
     img: "/oasis.png",
   },
-  {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+  { 
     img: "/ingram.png",
   },
-  {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+  { 
     img: "/redington.png",
   },
-  {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+  { 
     img: "/savex.png",
   },
   {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "/puma.png",
+    img: "/ingram.png",
   },
 ];
 
@@ -46,14 +28,9 @@ const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({
   img,
-  name,
-  username,
-  body,
+  
 }: {
   img: string;
-  name: string;
-  username: string;
-  body: string;
 }) => {
   return (
     <figure
@@ -72,9 +49,9 @@ const ReviewCard = ({
         <img className="" width={150} height={60} alt="" src={img} />
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium dark:text-white">
-            {name}
+            
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+          
         </div> 
       </div>
       {/* <blockquote className="mt-2 text-sm">{body}</blockquote> */}
@@ -111,12 +88,12 @@ export function MarqueeDemo() {
       >
         <Marquee pauseOnHover className="[--duration:10s]">
           {firstRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
+            <ReviewCard key={review.img} {...review} />
           ))}
         </Marquee>
         <Marquee reverse pauseOnHover className="[--duration:10s]">
           {secondRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
+            <ReviewCard key={review.img} {...review} />
           ))}
         </Marquee>
         {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div> */}
