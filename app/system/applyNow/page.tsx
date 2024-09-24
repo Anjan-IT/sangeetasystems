@@ -1,7 +1,7 @@
-"use client"
-import Footer from '@/components/Footer';
-import Navbar from '@/components/ui/NavBar';
-import React from 'react'
+"use client";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/NavBar";
+import React from "react";
 
 function ApplyNow() {
   return (
@@ -27,7 +27,6 @@ function ApplyNow() {
             </iframe>
           </div>
         </section>
-        
       </main>
       <Footer />
     </>

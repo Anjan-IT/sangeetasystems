@@ -6,19 +6,13 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import Navbar from "@/components/ui/NavBar";
-import { jobListings, benefits, socialLinks } from "@/data";
+import Navbar from "@/components/NavBar";
+import { jobListings, benefits} from "@/data";
 import Footer from "@/components/Footer";
-import ApplyNow from "../applyNow/page";
 import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Content for data/index.ts:
-/*
-
-];
-*/
 
 const CareersPage = () => {
   const heroRef = useRef<HTMLDivElement | null>(null);
@@ -189,71 +183,6 @@ const CareersPage = () => {
             </div>
           </div>
         </section>
-
-        {/* <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Apply Now</h2>
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSeDb9w1LG3s7Cb2LBGfgqNVYuK_L4l9PJ1HtCCfMI2iDlttsg/viewform?embedded=true"
-              width={640}
-              height={956}
-              frameBorder={0}
-              marginHeight={0}
-              marginWidth={0}
-            >
-              Loading…
-            </iframe>
-          </div>
-        </section> */}
-
-        {/* <footer className="bg-gray-800 text-white py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-between items-center">
-              <div className="w-full md:w-1/3 text-center md:text-left">
-                <h3 className="text-lg font-semibold mb-2">TechSolutions</h3>
-                <p className="text-sm">Innovating for a better tomorrow</p>
-              </div>
-              <div className="w-full md:w-1/3 text-center my-4 md:my-0">
-                <a href="/about" className="text-sm hover:text-blue-400 mx-2">
-                  About Us
-                </a>
-                <a
-                  href="/services"
-                  className="text-sm hover:text-blue-400 mx-2"
-                >
-                  Services
-                </a>
-                <a href="/contact" className="text-sm hover:text-blue-400 mx-2">
-                  Contact
-                </a>
-              </div>
-              <div className="w-full md:w-1/3 text-center md:text-right">
-                <motion.a
-                  href="#"
-                  whileHover={{ scale: 1.2 }}
-                  className="text-2xl mx-2"
-                >
-                  <i className="fab fa-facebook"></i>
-                </motion.a>
-                <motion.a
-                  href="#"
-                  whileHover={{ scale: 1.2 }}
-                  className="text-2xl mx-2"
-                >
-                  <i className="fab fa-twitter"></i>
-                </motion.a>
-                <motion.a
-                  href="#"
-                  whileHover={{ scale: 1.2 }}
-                  className="text-2xl mx-2"
-                >
-                  <i className="fab fa-linkedin"></i>
-                </motion.a>
-              </div>
-            </div>
-          </div>
-        </footer> */}
-
         <Footer />
       </div>
     </>

@@ -6,11 +6,14 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "@/components/ui/NavBar";
+import Navbar from "@/components/NavBar";
 import HyperText from "@/components/ui/HyperText";
 import { motion } from "framer-motion";
-import { services } from "@/data";
+import { services, servicesData } from "@/data";
 import Footer from "@/components/Footer";
+import Link from "next/link";
+         
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,10 +23,8 @@ const ServicesPage = () => {
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const testimonialsRef = useRef<HTMLDivElement | null>(null);
   const servicesCardRef = useRef<HTMLDivElement | null>(null);
-  
 
   useEffect(() => {
-
     // GSAP Animations with ScrollTrigger
     if (heroRef.current) {
       gsap.from(heroRef.current.querySelectorAll(".animate-hero"), {
@@ -35,33 +36,31 @@ const ServicesPage = () => {
         scrollTrigger: {
           trigger: heroRef.current,
           start: "20% center top",
-          toggleActions: "play pause reverse reset", // Animation plays only once
+          toggleActions: "play pause reverse reset",
         },
       });
     }
     if (servicesCardRef.current) {
       gsap.fromTo(
         servicesCardRef.current.querySelectorAll(".service-card"),
-
         {
-          opacity: 1, // Start fully transparent
-          scale: 1.5, // Start larger in size
-          x: () => gsap.utils.random(-200, 200), // Randomize horizontal position
-          y: () => gsap.utils.random(-200, 200), // Randomize vertical position
+          opacity: 1,
+          scale: 1.5,
+          x: () => gsap.utils.random(-200, 200),
+          y: () => gsap.utils.random(-200, 200),
         },
         {
-          opacity: 1, // Fade into view
-          scale: 1, // Shrink down to normal size
-          x: 0, // Return to the original horizontal position
-          y: 0, // Return to the original vertical position
-          duration: 0.5, // Duration for each animation
-          stagger: 0.2, // Delay between each card
-          ease: "power3.out", // Smooth easing
+          opacity: 1,
+          scale: 1,
+          x: 0,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.2,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: servicesCardRef.current,
-            start: "20% center top", // When 80% of the section is in view, start the animation
-            toggleActions: "play repeat play none", // Play the animation once
-
+            start: "20% center top",
+            toggleActions: "play repeat play none",
             invalidateOnRefresh: true,
           },
         }
@@ -108,12 +107,11 @@ const ServicesPage = () => {
         gsap
           .timeline({
             scrollTrigger: {
-              trigger: section, // Ensure the trigger is the section
-              start: "10% bottom", // Adjust the scroll start position so the animation starts when 80% of the section is in view
-              end: " 40%", // End when the bottom is 20% from the viewport
-              toggleActions: "play reverse play reverse", // Play and reverse on scroll
+              trigger: section,
+              start: "10% bottom",
+              end: " 40%",
+              toggleActions: "play reverse play reverse",
               scrub: 1,
-              // Remove the markers property to hide them
             },
           })
           .fromTo(
@@ -130,23 +128,21 @@ const ServicesPage = () => {
       });
     }
 
-    // Cleanup function
     return () => {
-      // Kill all ScrollTriggers to prevent them from affecting other pages
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
   return (
     <div
       id="smooth-wrapper"
-      className=" text-black"
+      className="text-black w-full overflow-x-hidden"
       style={{
         backgroundColor: "#FEDCCE",
       }}
     >
       <Navbar />
-      <div id="smooth-content">
+      <div id="smooth-content" className="w-full">
         {/* Hero Section */}
         <section
           ref={heroRef}
@@ -160,51 +156,47 @@ const ServicesPage = () => {
           >
             <source src="/servicesBG.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0  opacity-50"></div>
 
-          <div className="relative z-10 text-center">
-            <h1 className=""></h1>
+          <div className="relative z-10 text-center px-4 flex flex-col items-center justify-center h-screen">
             <HyperText
-              className="animate-hero text-5xl md:text-7xl font-bold mb-4"
+              className="animate-hero text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold mb-4 max-w-[90vw] sm:max-w-[80vw] md:max-w-[70vw] lg:max-w-[60vw]"
               text="IT Solutions for Tomorrow"
             />
-            <p className="animate-hero text-xl md:text-2xl mb-8">
+            <p className="animate-hero text-sm sm:text-base md:text-lg lg:text-xl mb-6 px-2 max-w-[90vw] sm:max-w-[80vw] md:max-w-[70vw] lg:max-w-[60vw]">
               Empowering businesses with cutting-edge technology
             </p>
-            <button className="animate-hero bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
-              Get Started
-            </button>
+            <Link href="/system/contact">
+              <button className="animate-hero bg-gray-900 hover:bg-gray-800 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-full transition duration-300 text-xs sm:text-sm md:text-base">
+                Get Started
+              </button>
+            </Link>
           </div>
         </section>
 
         {/* Services Section */}
         <section
           ref={servicesCardRef}
-          className="py-20 px-4 md:px-8"
+          className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8"
           style={{
             backgroundColor: "#FEDCCE",
           }}
         >
-          <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: "Cloud Solutions", icon: "☁️" ,description:"Scalable and secure cloud solutions tailored to your business needs."},
-              { title: "Cybersecurity", icon: "🔒" ,description:"Advanced security measures to protect your digital assets."},
-              { title: "Data Analytics", icon: "📊" ,description:"Transform your data into actionable insights with our analytics services."},
-              { title: "AI & Machine Learning", icon: "🤖" ,description:"Leverage AI and machine learning to drive innovation and efficiency."},
-              { title: "IoT Integration", icon: "🌐" ,description:"Seamlessly integrate IoT devices to enhance connectivity and automation."},
-              { title: "IT Consulting", icon: "💼" ,description:"Expert IT consulting to help you navigate complex technology challenges."},
-            ].map((service, index) => (
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+            Our Services
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {servicesData.map((service: any, index: any) => (
               <div
                 key={index}
-                className="service-card  p-6 rounded-lg shadow-lg"
+                className="service-card p-6 rounded-lg shadow-lg"
                 style={{
                   backgroundColor: "#CDC2C4",
                 }}
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-black">{service.description}.</p>
+                <p className="text-black">{service.description}</p>
               </div>
             ))}
           </div>
@@ -212,7 +204,7 @@ const ServicesPage = () => {
 
         <div
           ref={servicesRef}
-          className=" min-h-screen"
+          className="min-h-screen"
           style={{
             backgroundColor: "#FEDCCE",
           }}
@@ -220,25 +212,27 @@ const ServicesPage = () => {
           {services.map((service, index) => (
             <section
               key={service.title}
-              className={`service-section flex flex-col   md:flex-row items-center justify-between py-20 px-8 md:px-20 ${
+              className={`service-section flex flex-col md:flex-row items-center justify-between py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${
                 index % 2 === 0 ? "md:flex-row-reverse" : ""
               }`}
             >
-              <div className="service-content  ml-5  w-full md:w-1/2 mb-4  md:mb-0">
-                <h2 className="text-3xl font-bold mb-4">{service.title}</h2>
-                <p className="text-lg text-gray-600">{service.description}</p>
+              <div className="service-content w-full md:w-1/2 mb-8 md:mb-0 md:px-4">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                  {service.title}
+                </h2>
+                <p className="text-base sm:text-lg text-gray-600">
+                  {service.description}
+                </p>
               </div>
 
               <motion.div
-                className="service-image w-full md:w-1/2"
+                className="service-image w-full md:w-1/2 md:px-4"
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img
                   src={service.image}
                   alt={service.title}
-                  width={500}
-                  height={300}
                   className="rounded-lg shadow-lg w-full h-auto"
                   loading="lazy"
                 />

@@ -5,7 +5,167 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
-// about us page
+// landing page (scrolling logos)
+
+export const reviews = [
+  {
+    img: "/oliva.png",
+  },
+  {
+    img: "/oasis.png",
+  },
+  {
+    img: "/ingram.png",
+  },
+  {
+    img: "/redington.png",
+  },
+  {
+    img: "/savex.png",
+  },
+  {
+    img: "/ingram.png",
+  },
+];
+
+
+
+// landing page (our services)
+
+export const workExperience = [
+  {
+    id: 1,
+    title: "Cloud Services",
+    desc: "Cloud services offer internet-based computing resources, removing the need for hardware.",
+    className: "md:col-span-2",
+    thumbnail: "/cloud.png",
+  },
+
+  {
+    id: 2,
+    title: "IT Infrastructure",
+    desc: "IT infrastructure includes the key hardware and software components that support IT services.",
+    className: "md:col-span-2", // change to md:col-span-2
+    thumbnail: "/IT.png",
+  },
+  {
+    id: 6,
+    title: "Mailing Solutions",
+    desc: "Email Solutions deliver reliable, cost-effective hosting for Exchange, QMail, and Zimbra.",
+    className: "md:col-span-2",
+    thumbnail: "/mailing.png",
+  },
+  {
+    id: 3,
+    title: "Network & Security Management",
+    desc: "Network security management offers full visibility and insights into network components and security.",
+    className: "md:col-span-2", // change to md:col-span-2
+    thumbnail: "/security.png",
+  },
+  {
+    id: 4,
+    title: "Data Center Infrastructure Solutions",
+    desc: "Data center solutions provide IT equipment and critical infrastructure for data center operations.",
+    className: "md:col-span-2",
+    thumbnail: "/network.png",
+  },
+  {
+    id: 5,
+    title: "Enterprise & Security Solutions",
+    desc: "SecureBox provides complete protection against all threats, covering both software and hardware.",
+    className: "md:col-span-2",
+    thumbnail: "/enterprise.png",
+  },
+];
+
+
+
+// landing page (our core services)
+
+
+export const coreServicesData = [
+  {
+    id: 1,
+    title: "Microsoft Azure",
+    description:
+      "Our expert engineers create scalable Azure environments for a seamless transition that aligns with your business needs.",
+    imageUrl: "/azure.png",
+  },
+  {
+    id: 2,
+    title: "Help Desk Support",
+    description:
+      "Uptime is vital for today’s complex IT infrastructures, and Help Desk systems are key to ensuring seamless operations.",
+    imageUrl: "/support.png",
+  },
+  {
+    id: 3,
+    title: "Outsource",
+    description:
+      "Outsource your IT and software development for agile talent, flexible hiring, and swift onboarding—all at competitive rates.",
+    imageUrl: "/outsource.png",
+  },
+  {
+    id: 4,
+    title: "Video Conferencing",
+    description:
+      "SS, a leading audio-visual solutions provider, delivers top-tier products for boardrooms, conference rooms, auditoriums, training rooms, and beyond.",
+    imageUrl: "/videoCon.png",
+  },
+];
+
+// landing page (image tabs)
+// home page Images tabs content
+export const tabs = [
+  {
+    title: "Cybersecurity",
+    value: "product",
+    image: "/cyberpic.png",
+  },
+  {
+    title: "Cloud Computing",
+    value: "services",
+    image: "/cloudpics.png",
+  },
+  {
+    title: "Enterprise solutions",
+    value: "enterprise",
+    image: "/enterpriseposter.png",
+  },
+  {
+    title: "Mailing solutions",
+    value: "mailing",
+    image: "/mailingposter.png",
+  },
+];
+
+
+
+// about us page (our services)
+
+export const serviceAbout = [
+  {
+    title: "Cloud Services",
+    description:
+      "Scalable and secure cloud solutions tailored to your business needs.",
+    image: "/cloudpics.png",
+  },
+  {
+    title: "IT Infrastructure",
+    description:
+      "Robust and efficient IT infrastructure design and implementation.",
+    image: "/ITinfra.png",
+  },
+  {
+    title: "Cybersecurity",
+    description: "Advanced security measures to protect your digital assets.",
+    image: "/cyberpic.png",
+  },
+];
+
+
+
+// about us page (testimonials)
 
 export const testimonialAbout = [
   {
@@ -28,26 +188,49 @@ export const testimonialAbout = [
   },
 ];
 
-export const serviceAbout = [
+
+// services page ( our services)
+
+
+export const servicesData = [
   {
-    title: "Cloud Services",
+    title: "Cloud Solutions",
+    icon: "☁️",
     description:
       "Scalable and secure cloud solutions tailored to your business needs.",
-    image: "/cloudpics.png",
-  },
-  {
-    title: "IT Infrastructure",
-    description:
-      "Robust and efficient IT infrastructure design and implementation.",
-    image: "/ITinfra.png",
   },
   {
     title: "Cybersecurity",
+    icon: "🔒",
     description: "Advanced security measures to protect your digital assets.",
-    image: "/cyberpic.png",
+  },
+  {
+    title: "Enterprise Solutions",
+    icon: "🏢",
+    description:
+      "Comprehensive enterprise solutions to streamline your business operations and drive growth.",
+  },
+  {
+    title: "IT Infrastructure",
+    icon: "🖥️",
+    description:
+      "Robust IT infrastructure solutions to support and enhance your business operations.",
+  },
+  {
+    title: "Mailing Solutions",
+    icon: "✉️",
+    description:
+      "Efficient and reliable mailing solutions to streamline your communication processes.",
+  },
+  {
+    title: "IT Consulting",
+    icon: "💼",
+    description:
+      "Expert IT consulting to help you navigate complex technology challenges.",
   },
 ];
 
+// services page (about services with images and description)
 
 export const services = [
   {
@@ -82,62 +265,10 @@ export const services = [
   },
 ];
 
-// home page Images tabs content
-// Content moved to data/index.ts:
-export const tabs = [
-  {
-    title: "Cybersecurity",
-    value: "product",
-    image: "/cyberpic.png",
-  },
-  {
-    title: "Cloud Computing",
-    value: "services",
-    image: "/cloudpics.png",
-  },
-  {
-    title: "Enterprise solutions",
-    value: "enterprise",
-    image: "/enterpriseposter.png",
-  },
-  {
-    title: "Mailing solutions",
-    value: "mailing",
-    image: "/mailingposter.png",
-  },
-];
 
 
-export const coreServicesData = [
-  {
-    id: 1,
-    title: "Microsoft Azure",
-    description:
-      "Our expert engineers create scalable Azure environments for a seamless transition that aligns with your business needs.",
-    imageUrl: "/azure.png",
-  },
-  {
-    id: 2,
-    title: "Help Desk Support",
-    description:
-      "Uptime is vital for today’s complex IT infrastructures, and Help Desk systems are key to ensuring seamless operations.",
-    imageUrl: "/support.png",
-  },
-  {
-    id: 3,
-    title: "Outsource",
-    description:
-      "Outsource your IT and software development for agile talent, flexible hiring, and swift onboarding—all at competitive rates.",
-    imageUrl: "/outsource.png",
-  },
-  {
-    id: 4,
-    title: "Video Conferencing",
-    description:
-      "SS, a leading audio-visual solutions provider, delivers top-tier products for boardrooms, conference rooms, auditoriums, training rooms, and beyond.",
-    imageUrl: "/videoCon.png",
-  },
-];
+// careers page (job listings)
+
 
 export const jobListings = [
   {
@@ -154,6 +285,9 @@ export const jobListings = [
   }
 ];
 
+
+// careers page (benefits)
+
 export const benefits = [
   {
     title: "Flexible work environment",
@@ -169,11 +303,7 @@ export const benefits = [
   }
 ];
 
-export const socialLinks = [
-  { icon: "facebook", url: "#" },
-  { icon: "twitter", url: "#" },
-  { icon: "linkedin", url: "#" }
-];
+
 export const gridItems = [
   {
     id: 1,
@@ -339,51 +469,8 @@ export const companies = [
   },
 ];
 
-export const workExperience = [
-  {
-    id: 1,
-    title: "Cloud Services",
-    desc: "Cloud services offer internet-based computing resources, eliminating the need for hardware and software ownership.",
-    className: "md:col-span-2",
-    thumbnail: "/cloud.png",
-  },
 
-  {
-    id: 2,
-    title: "IT Infrastructure",
-    desc: "IT infrastructure includes the key hardware and software components that support IT services.",
-    className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/IT.png",
-  },
-  {
-    id: 6,
-    title: "Mailing Solutions",
-    desc: "Email Solutions deliver reliable, cost-effective hosting for Exchange, QMail, and Zimbra.",
-    className: "md:col-span-2",
-    thumbnail: "/mailing.png",
-  },
-  {
-    id: 3,
-    title: "Network & Security Management",
-    desc: "Network security management offers full visibility and insights into network components and security.",
-    className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/security.png",
-  },
-  {
-    id: 4,
-    title: "Data Center Infrastructure Solutions",
-    desc: "Data center solutions provide IT equipment and critical infrastructure for data center operations.",
-    className: "md:col-span-2",
-    thumbnail: "/network.png",
-  },
-  {
-    id: 5,
-    title: "Enterprise & Security Solutions",
-    desc: "SecureBox provides complete protection against all threats, covering both software and hardware.",
-    className: "md:col-span-2",
-    thumbnail: "/enterprise.png",
-  },
-];
+
 
 export const socialMedia = [
   {

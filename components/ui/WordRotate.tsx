@@ -90,7 +90,7 @@ export default function WordRotate({
   }, [words, duration]);
 
   return (
-    <div className="overflow-hidden  py-2 font-bold dark:text-white text-black my-4 leading-snug tracking-wide">
+    <div className="overflow-hidden   font-bold dark:text-white text-black  leading-snug tracking-wide">
       {staticText && <div className="static-text">{staticText}</div>}
       {"Driving Business Value with Innovative  "}
       {/* Render static text */}
@@ -106,3 +106,5 @@ export default function WordRotate({
     </div>
   );
 }
+
+

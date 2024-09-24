@@ -1,5 +1,3 @@
-
-
 "use client";
 
 // import { navItems } from "@/data";
@@ -12,7 +10,7 @@ import Footer from "@/components/Footer";
 // import Experience from "@/components/OurServices";
 // import RecentProjects from "@/components/RecentProjects";
 // import { FloatingNav } from "@/components/ui/FloatingNavbar";
-import Navbar from "@/components/ui/NavBar";
+import Navbar from "@/components/NavBar";
 // import NavbarTop from "@/components/ui/navbartop";
 import { TabsDemo } from "@/components/services";
 // import { StickyScrollRevealDemo } from "@/components/CoreServices";
@@ -24,7 +22,6 @@ import CoreServices from "@/components/OurCoreServices";
 
 // import { TimelineDemo } from "@/components/CoreServices";
 // import Services from "@/components/services";
-
 
 const Home = () => {
   return (

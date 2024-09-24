@@ -56,30 +56,30 @@ const Hero = () => {
           <div className="relative z-100 flex justify-center my-20 ml-0 md:ml-20 lg:ml-40">
             <Ripple className="z-0" />
 
-            {/* Red Circle Positioned in the Center of the Ripple */}
+            {/* Circle Positioned in the Center of the Ripple */}
             <div
-              className="absolute size-32 bg rounded-full"
+              className="absolute bg rounded-full w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32"
               style={{
                 left: "0%",
                 top: "0%",
                 transform: "translate(-50%, -50%)",
                 backgroundColor: "#323232",
-                zIndex: 1, // Ensure the red circle is on top of the ripple but below the text
+                zIndex: 1, // Ensure the circle is on top of the ripple but below the text
               }}
             />
 
-            <a
-              href="#contact" // Adjust this href to link to your desired section
-              className="absolute text-md font-medium tracking-tighter size-md text-white transition-transform transform hover:scale-105"
+            <Link
+              href="/system/contact"
+              className="absolute text-xs sm:text-sm md:text-md font-medium tracking-tighter text-white transition-transform transform hover:scale-105"
               style={{
                 left: "0%",
                 top: "0%",
                 transform: "translate(-50%, -50%)",
-                zIndex: 2, // Ensure the text is on top of the red circle
+                zIndex: 2, // Ensure the text is on top of the circle
               }}
             >
               Let's Talk
-            </a>
+            </Link>
           </div>
         </div>
       </div>

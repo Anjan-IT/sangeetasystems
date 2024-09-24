@@ -1,7 +1,7 @@
 "use client";
 import Swal from "sweetalert2";
 import React, { useState } from "react";
-import Navbar from "@/components/ui/NavBar";
+import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
 const Contact = () => {
@@ -41,7 +41,10 @@ const Contact = () => {
     } catch (error) {
       Swal.fire({
         title: "Error!",
-        text: error instanceof Error ? error.message : "An unexpected error occurred.",
+        text:
+          error instanceof Error
+            ? error.message
+            : "An unexpected error occurred.",
         icon: "error",
       });
     }
