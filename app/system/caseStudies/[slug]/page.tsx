@@ -6,7 +6,7 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { format } from "date-fns";
 import { urlFor } from "@/sanity/lib/image";
-import { useEffect, useRef, useState } from "react";
+import { AwaitedReactNode, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 export async function generateStaticParams() {
@@ -79,7 +79,7 @@ export default async function CaseStudyPage({
           <div 
             className="flex flex-wrap gap-2 mb-6"
           >
-            {post.categories.map((category) => (
+            {post.categories.map((category: { _id: Key | null | undefined; title: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | Iterable<ReactNode> | null | undefined; }) => (
               <span 
                 key={category._id} 
                 className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold hover:bg-blue-200 transition-colors duration-300"
