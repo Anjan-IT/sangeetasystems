@@ -7,6 +7,9 @@ import Ripple from "./ui/ripple";
 import WordRotate from "./ui/WordRotate";
 import Link from "next/link";
 
+console.log("Project ID:", process.env.SANITY_STUDIO_PROJECT_ID);
+console.log("Dataset:", process.env.SANITY_STUDIO_DATASET);
+
 const Hero = () => {
   return (
     <>
@@ -79,8 +82,10 @@ const Hero = () => {
               }}
             >
               Let's Talk
+              
             </Link>
           </div>
+          
         </div>
       </div>
     </>
