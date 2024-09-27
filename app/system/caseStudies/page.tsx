@@ -28,7 +28,14 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div
+      className="flex flex-col min-h-screen "
+      style={{
+        backgroundColor: "#faefe0",
+        // backgroundColor: "#DEE5D4",
+        // background: "linear-gradient(180deg, #faefe0,#fff7ad)",
+      }}
+    >
       <Navbar />
       <main className="flex-grow container mt-16  mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-8 text-center">

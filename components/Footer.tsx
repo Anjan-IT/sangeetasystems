@@ -8,14 +8,16 @@ function Footer() {
   const [email, setEmail] = useState('');
   const [subscriptionStatus, setSubscriptionStatus] = useState('');
 
+  // change the phone number to the phone number you want to send the call to 
   const handleCall = () => {
     window.location.href = 'tel:+917396691030';
   };
 
+  // change the email to the email you want to send the subscription to 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) {
-      setSubscriptionStatus("chandramoulisangabathula01@gmail.com");
+      setSubscriptionStatus("info@sangeetasystems.com");
       return;
     }
     try {
@@ -75,7 +77,7 @@ function Footer() {
                 { name: "About Us", href: "/system/about" },
                 { name: "Services", href: "/system/services" },
                 { name: "Careers", href: "/system/careers" },
-                // { name: "Case Studies", href: "/system/caseStudies" },
+                { name: "Case Studies", href: "/system/caseStudies" },
                 { name: "Contact", href: "/system/contact" },
               ].map((link, index) => (
                 <motion.li key={index}>
@@ -142,24 +144,24 @@ function Footer() {
               {[
                 {
                   name: "LinkedIn",
-                  url: "https://www.linkedin.com/company/sangeeta-systems",
+                  url: "https://www.linkedin.com/company/sangeetasystems",
                   icon: FaLinkedin,
                 },
                 {
                   name: "Twitter",
-                  url: "https://twitter.com/sangeetasystems",
+                  url: "https://x.com/sangeetasystems",
                   icon: FaTwitter,
                 },
                 {
                   name: "Facebook",
-                  url: "https://www.facebook.com/sangeetasystems",
+                  url: "https://www.facebook.com/people/Sangeeta-Systems/61552933215396/",
                   icon: FaFacebook,
                 },
-                {
-                  name: "Instagram",
-                  url: "https://www.instagram.com/sangeetasystems",
-                  icon: FaInstagram,
-                },
+                // {
+                //   name: "Instagram",
+                //   url: "https://www.instagram.com/sangeetasystems",
+                //   icon: FaInstagram,
+                // },
               ].map((social, index) => (
                 <motion.a
                   key={index}
@@ -176,7 +178,10 @@ function Footer() {
             <h4 className="text-base sm:text-lg font-semibold mb-2">
               Newsletter
             </h4>
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row">
+            <form
+              onSubmit={handleSubscribe}
+              className="flex flex-col sm:flex-row"
+            >
               <input
                 type="email"
                 placeholder="Your email"

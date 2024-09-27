@@ -66,7 +66,7 @@ const Contact = () => {
         }}
       >
         <Navbar />
-        <div className="container mx-auto px-4 py-20 ">
+        <div className="container mx-auto px-4 py-24 ">
           <div className="grid lg:grid-cols-2 gap-8 items-center bg-gray-200 rounded-3xl shadow-lg overflow-hidden">
             <div className="p-8">
               <h2 className="text-3xl font-extrabold text-gray-800 mb-6">
